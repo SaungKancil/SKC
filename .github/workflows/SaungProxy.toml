@@ -1,0 +1,5 @@
+proxies:
+- {name: vmess grcp2, server: sgdo05-07-v2ray-vmess.darktunnel.net, port: 443, type: vmess, uuid: 747c371a-6a54-4c4c-8279-7ecd3f9b5338, servername: http://api2-t3.musical.ly, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
+- {name: Vmess biasa2, server: id1.kitu.xyz, port: 443, type: vmess, uuid: b1833c18-24c1-45e3-9954-78e606ddfe08, sni: Cdntest40.line-scdb.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess/, headers: {Host: http://api2-t3.musical.ly}}}
+- {name: TJ grcp1, server: id9.kitu.xyz, port: 443, udp: true, type: trojan, password: 64e58cc5-d55b-4477-afbc-c32710c6ed67, sni: http://api2-t3.musical.ly, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: xray-trojan-grpc}}
+- {name: TJ biasa2, server: sg3-fullv2ray.racevpn.com, port: 443, udp: true, type: trojan, password: 11f1b90b-5fd1-43cb-8990-48c8b6729da4, sni: http://api2-t3.musical.ly, skip-cert-verify: true}

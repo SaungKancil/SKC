@@ -1,0 +1,5 @@
+proxies:
+- {name: Vmess grpc1, server: id1.kitu.xyz, port: 443, type: vmess, uuid: 0575cf44-dbe5-46cf-91b8-ab51e2a54c82, servername: http://api2-t3.musical.ly, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: v2ray-vmess-grpc}}
+- {name: Vmees Biasa1, server: id-lb.sshkit.org, port: 443, type: vmess, uuid: 6fea1649-425b-4092-bf53-29792152c925, sni: Cdntest40.line-scdb.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /sshkit/Sskal/62125f2bb4c3d/, headers: {Host: http://api2-t3.musical.ly}}}
+- {name: TJ biasa1, server: id-fullv2ray.racevpn.com, port: 443, udp: true, type: trojan, password: d430d28c-4543-4500-bebc-5a01e2bfc2eb, sni: http://api2-t3.musical.ly, skip-cert-verify: true}
+- {name: TJ grcp2, server: id9.kitu.xyz, port: 443, udp: true, type: trojan, password: 64e58cc5-d55b-4477-afbc-c32710c6ed67, sni: http://api2-t3.musical.ly, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: xray-trojan-grpc}}

@@ -1,0 +1,4 @@
+proxies:
+  - {name: TJ3, server: sg-ovh.tjvpn.org, port: 443, udp: true, type: trojan, password: 73f81bd0-92c4-11ec-b734-225401db9d57, sni: v27.tiktokcdn.com, skip-cert-verify: true}
+  - {name: TJ4, server: id-1.tjvpn.org, port: 443, udp: true, type: trojan, password: e57b8dc0-92c4-11ec-b239-225401db9d57, sni: v27.tiktokcdn.com, skip-cert-verify: true}
+  - {name: vmess4, server: sg5-v2ray.sshkit.org, port: 443, type: vmess, uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3, sni: V27.titktokcdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /sshkit/1469379190/62130536d5d1c/, headers: {Host: V27.titktokcdn.com}}}
