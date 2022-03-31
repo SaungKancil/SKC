@@ -1,0 +1,120 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  listen: 127.0.0.1:7874
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback:
+    - 1.0.0.1
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+proxies:
+ - name: Akun1
+   server: id-fullv2ray.racevpn.com
+   port: 443
+   type: trojan
+   password: b7e80c0d-30fe-4899-b34d-2640e9b500a8
+   skip-cert-verify: true
+   sni: bug.com
+   udp: true
+ - name: Akun2
+   server: sg3-fullv2ray.racevpn.com
+   port: 443
+   type: trojan
+   password: f644e7f2-7878-4da9-9c6d-d48cf43b864f
+   skip-cert-verify: true
+   sni: v27.tiktokcdn.com
+   udp: true
+ - name: Akun3
+   server: id-1.tjvpn.org
+   port: 443
+   type: trojan
+   password: 40854a80-95b8-11ec-b332-225401db9d57
+   skip-cert-verify: true
+   sni: v27.tiktokcdn.com
+   udp: true
+ - name: Akun4
+   server: 54.151.224.87
+   port: 11443
+   type: vmess
+   uuid: 2787e6f8-3b4a-4340-1048-d76eb05f328b
+   alterId: 0
+   cipher: auto
+   tls: true
+   skip-cert-verify: true
+   servername: v27.tiktokcdn.com
+   network: grpc
+   grpc-opts:
+     grpc-mode: multi
+     grpc-service-name: mygrpc
+   udp: true
+ - name: Akun5
+   server: id-lb.sshkit.org
+   port: 443
+   type: vmess
+   uuid: 6fea1649-425b-4092-bf53-29792152c925
+   alterId: 0
+   cipher: auto
+   tls: true
+   skip-cert-verify: true
+   servername: V27.tiktokcdn.com
+   network: ws
+   ws-opts:
+     path: /sshkit/Yhhjk/6217f9c626ce6/
+     headers:
+       Host: V27.tiktokcdn.com
+   udp: true
+proxy-groups:
+ - name: SKC
+   type: url-test
+   interval: 99
+   url: http://www.gstatic.com/generate_204
+   proxies:
+     - Akun1
+     - Akun2
+     - Akun3
+     - Akun4
+     - Akun5
+ - name: TJ
+   type: load-balance
+   interval: 99
+   url: http://www.gstatic.com/generate_204
+   proxies:
+     - Akun1
+     - Akun2
+ - name: Vmess
+   type: load-balance
+   interval: 99
+   url: http://www.gstatic.com/generate_204
+   proxies:
+     - Akun3
+     - Akun4
+ - name: Multi
+   type: load-balance
+   interval: 99
+   url: http://www.gstatic.com/generate_204
+   proxies:
+     - TJ
+     - Vmess
+rules:
+  - MATCH,GLOBAL
